@@ -19,7 +19,7 @@
 
 # 데모영상
 
-[![]]([YouTube 비디오 URL](https://youtu.be/Gd66Bzkedrg))
+[![시연영상](https://cdn.pixabay.com/photo/2019/02/20/22/33/video-cassette-4010202_960_720.png)](https://youtu.be/Gd66Bzkedrg)
 
 <br>
 
