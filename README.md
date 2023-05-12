@@ -17,9 +17,9 @@
 
 <br>
 
-# 데모영상
+# 시연영상 (이미지클릭)
 
-[![시연영상](https://cdn.pixabay.com/photo/2019/02/20/22/33/video-cassette-4010202_960_720.png)](https://youtu.be/Gd66Bzkedrg)
+[![시연영상](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHGGEzG_APHtjCKa5V-bJCqoqEEGKW7a84hA&usqp=CAU)](https://youtu.be/Gd66Bzkedrg)
 
 <br>
 
