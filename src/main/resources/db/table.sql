@@ -1,5 +1,5 @@
-CREATE DATABASE donutdb;
-USE donutdb;
+-- CREATE DATABASE donutdb;
+-- USE donutdb;
 
 
 CREATE TABLE user_tb
