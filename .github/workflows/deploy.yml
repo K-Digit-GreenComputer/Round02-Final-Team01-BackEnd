@@ -17,20 +17,17 @@ jobs:
         with:
           java-version: 17
           distribution: zulu
-      - name: ENV Setting
-        run: | 
-          echo "AWS_ACCESS_KEY=${{secrets.AWS_ACCESS_KEY}}" >> env.yml
-          echo "AWS_SECRET_KEY=${{secrets.AWS_SECRET_KEY}}" >> env.yml
-          echo "BOOT_ACCESS_KEY=${{secrets.BOOT_ACCESS_KEY}}" >> env.yml
-          echo "BOOT_ACCESS_KEY=${{secrets.BOOT_ACCESS_KEY}}" >> env.yml
-          echo "HS512_SECRET=${{secrets.HS512_SECRET}}" >> env.yml
-          echo "SENTRY=${{secrets.SENTRY}}" >> env.yml
-        working-directory: src/main/resources
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
       - name: Build with Gradle
+        env: |
+          AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY}}
+          AWS_SECRET_KEY: ${{secrets.AWS_SECRET_KEY}}
+          BOOT_ACCESS_KEY: ${{secrets.BOOT_ACCESS_KEY}}
+          BOOT_ACCESS_KEY: ${{secrets.BOOT_ACCESS_KEY}}
+          HS512_SECRET: ${{secrets.HS512_SECRET}}
+          SENTRY: ${{secrets.SENTRY}}
         run: ./gradlew clean build
-
 
       # UTC가 기준이기 때문에 한국시간으로 맞추려면 +9시간 해야 한다.
       - name: Get current time
