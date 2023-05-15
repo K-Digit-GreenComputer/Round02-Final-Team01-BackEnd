@@ -49,6 +49,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'commons-io:commons-io:2.11.0'
     asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'

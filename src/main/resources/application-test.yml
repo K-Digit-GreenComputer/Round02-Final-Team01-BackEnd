@@ -6,6 +6,17 @@ server:
       force: true
 
 spring:
+  cloud:
+    aws:
+      credentials:
+        access-key: ${AWS_S3_ACCESS_KEY}
+        secret-key: ${AWS_S3_SECRET_KEY}
+      s3:
+        bucket: groupbuying2
+      region:
+        static: ap-northeast-2
+      stack:
+        auto: false
   datasource:
     url: jdbc:h2:mem:test;MODE=MySQL
     driver-class-name: org.h2.Driver
@@ -21,14 +32,9 @@ spring:
       hibernate:
         format_sql: true
       default_batch_fetch_size: 100 # in query 자동 작성
-    database-platform: org.hibernate.dialect.MySQL5Dialect
   output:
     ansi:
       enabled: always
-  security:
-    user:
-      name: ssar
-      password: 1234
 
 logging:
   level:
@@ -39,8 +45,8 @@ meta:
   name: ${HS512_SECRET} # _대신 .을 쓸 수도 있다.
 
 boot-pay:
-  rest-api-key: ${REST_API_KEY}
-  private-key: ${PRIVATE_KEY}
+  rest-api-key: ${BOOT_ACCESS_KEY}
+  private-key: ${BOOT_SECRET_KEY}
 
 
 
