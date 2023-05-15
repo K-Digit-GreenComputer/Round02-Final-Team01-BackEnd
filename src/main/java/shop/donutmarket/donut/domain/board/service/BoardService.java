@@ -76,7 +76,7 @@ public class BoardService {
             String imglink;
             if (boardSaveReqDTO.getImg() == null) {
                 // 존재하지 않을 경우 s3에 저장된 (카테고리이름) + 디폴트.jpg 사진을 가져오고 해당 링크를 저장
-                imageName = category.getName() + "디폴트.jpg";
+                imageName = "default.jpg";
                 imglink = fileLoad.downloadObject(imageName);
             } else {
                 // 존재하면 사진 첨가 + s3에 저장
