@@ -1,3 +1,7 @@
+CREATE DATABASE donutdb;
+USE donutdb;
+
+
 CREATE TABLE user_tb
 (
     id          Bigint AUTO_INCREMENT PRIMARY KEY,
@@ -13,21 +17,21 @@ CREATE TABLE user_tb
     provider_id varchar(255),
     status_code int          DEFAULT '100',
     created_at  timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE rate
 (
     id         Bigint AUTO_INCREMENT PRIMARY KEY,
     rate_name  varchar(255) NOT NULL,
     created_at timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE category
 (
     id         Bigint AUTO_INCREMENT PRIMARY KEY,
     name       varchar(255) UNIQUE NOT NULL,
     created_at timestamp           NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 CREATE TABLE board
@@ -46,7 +50,7 @@ CREATE TABLE board
     city         varchar(255) NOT NULL,
     town         varchar(255) NOT NULL,
     created_at   timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE event
 (
@@ -59,7 +63,7 @@ CREATE TABLE event
     end_at       timestamp    NOT NULL,
     price        int          NOT NULL,
     created_at   timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE tag
 (
@@ -67,7 +71,7 @@ CREATE TABLE tag
     board_id   Bigint    NOT NULL,
     comment    text,
     created_at timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE participant
 (
@@ -78,7 +82,7 @@ CREATE TABLE participant
     limit_time  timestamp,
     status_code int DEFAULT '300',
     created_at  timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE payment
 (
@@ -90,7 +94,7 @@ CREATE TABLE payment
     status_code     int DEFAULT '400',
     confirmed       boolean      NOT NULL,
     created_at      timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE wishlist
 (
@@ -98,7 +102,7 @@ CREATE TABLE wishlist
     user_id    Bigint    NOT NULL,
     board_id   Bigint    NOT NULL,
     created_at timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE my_category
 (
@@ -106,7 +110,7 @@ CREATE TABLE my_category
     user_id     Bigint    NOT NULL,
     category_id Bigint    NOT NULL,
     created_at  timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE chatroom
 (
@@ -114,7 +118,7 @@ CREATE TABLE chatroom
     event_id    Bigint    NOT NULL,
     status_code int DEFAULT '500',
     created_at  timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE chatter_list
 (
@@ -123,7 +127,7 @@ CREATE TABLE chatter_list
     user_id     Bigint    NOT NULL,
     status_code int DEFAULT '700',
     created_at  timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE my_location
 (
@@ -133,7 +137,7 @@ CREATE TABLE my_location
     city       varchar(255) NOT NULL,
     town       varchar(255) NOT NULL,
     created_at timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE blacklist
 (
@@ -141,7 +145,7 @@ CREATE TABLE blacklist
     user_id         Bigint    NOT NULL,
     blocked_user_id Bigint    NOT NULL,
     created_at      timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE report
 (
@@ -154,7 +158,7 @@ CREATE TABLE report
     report_type varchar(255) NOT NULL,
     status_code int DEFAULT '600',
     created_at  timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE review
 (
@@ -164,7 +168,7 @@ CREATE TABLE review
     score       int       NOT NULL,
     comment     varchar(255),
     created_at  timestamp NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE my_account
 (
@@ -173,11 +177,11 @@ CREATE TABLE my_account
     brand          varchar(255) NOT NULL,
     account_number varchar(255) NOT NULL UNIQUE,
     created_at     timestamp    NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE payment_info
 (
-    id                   BIGINT AUTO_INCREMENT,
+    id                   BIGINT PRIMARY KEY AUTO_INCREMENT,
     event_id             Bigint NOT NULL,
     user_id              Bigint NOT NULL,
     event                VARCHAR(255),
@@ -211,6 +215,6 @@ CREATE TABLE payment_info
     bank_data            TEXT,
     vbank_data           TEXT,
     created_at           timestamp
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
