@@ -14,8 +14,8 @@ spring:
   cloud:
     aws:
       credentials:
-        access-key: ${secrets.AWS_ACCESS_KEY}
-        secret-key: ${secrets.AWS_SECRET_KEY}
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
       s3:
         bucket: groupbuying2
       region:
@@ -40,10 +40,10 @@ logging:
     '[org.hibernate.orm.jdbc.bind]': TRACE # 콘솔 쿼리에 ? 에 주입된 값 보기
 
 meta:
-  name: ${secrets.HS512_SECRET} # _대신 .을 쓸 수도 있다.
+  name: ${HS512_SECRET} # _대신 .을 쓸 수도 있다.
 
 sentry:
-  dsn: ${secrets.SENTRY}
+  dsn: ${SENTRY}
   traces-sample-rate: 1.0
   logging:
     minimum-event-level: warn
